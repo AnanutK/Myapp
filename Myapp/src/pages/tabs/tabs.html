@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+          <p style="color:white;font-weight: normal;font-size: 20px">
+                จัดการกลุ่มเรียน
+          </p>       
+      </ion-title>
+    </ion-navbar>
+   </ion-header>
+   <ion-content >
+       <ion-card>
+            <ion-list>
+                <ion-card>
+                        <ion-item>
+                                <ion-label  style="font-size: 16px" >เลือกคอร์สเรียน</ion-label>
+                                <ion-select [(ngModel)]="courseShow" (ionChange)='onCourseChange($event)' >
+                                  <ion-option *ngFor= "let c_data of course" [value]="c_data.spc_course_id" >{{c_data.spc_course_name}}</ion-option>                   
+                                </ion-select>
+                              </ion-item>
+                </ion-card>
+                <ion-card>
+                        <ion-item>
+                                <ion-label style="font-size: 17px" >เลือกกลุ่มเรียน</ion-label>
+                                <ion-select [(ngModel)]="groupShow" (ionChange)='onGroupChange($event)'>
+                                  <ion-option *ngFor= "let g_data of group" [value]="g_data.spc_group_id">{{g_data.spc_group_name}}</ion-option>                   
+                                </ion-select>
+                              </ion-item>  
+                </ion-card>                    
+                  </ion-list>
+       </ion-card>     
+      <ion-card>
+        <ion-card-header>
+          <ion-list>
+              <ion-item style="border: 0px"> 
+                    <ion-label style="text-align: left;font-size: 17px" >เพิ่มนักเรียนลงกลุ่ม</ion-label>
+                    <ion-label style="text-align: right"> <ion-icon name="person-add" > </ion-icon></ion-label>
+              </ion-item>
+          </ion-list>                                                           
+         </ion-card-header>             
+      </ion-card>
+      <ion-card>
+            <ion-card-header>
+              <ion-list>
+                  <ion-item style="border: 0px"> 
+                        <ion-label style="text-align: left;font-size: 17px" >เพิ่มอาจารย์ลงกลุ่ม</ion-label>
+                        <ion-label style="text-align: right"> <ion-icon name="person-add" > </ion-icon></ion-label>
+                  </ion-item>
+              </ion-list>                                                           
+             </ion-card-header>             
+          </ion-card>
+      <ion-card (click)="load()">          
+          <ion-card-header>
+                <ion-list>
+                        <ion-item style="border: 0px"> 
+                              <ion-label style="text-align: left;font-size: 17px" >ดูรายละเอียด</ion-label>
+                        </ion-item>
+                    </ion-list>  
+          </ion-card-header>     
+      </ion-card>
+   
+   </ion-content>
+   

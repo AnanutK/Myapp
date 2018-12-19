@@ -1,0 +1,40 @@
+<!--
+  Generated template for the StudentDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><p style="color:white;font-weight: normal;font-size: 20px">
+        จัดการกลุ่มเรียน
+  </p> </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-list *ngFor= "let c1_data of course;let i = index">
+                <ion-item *ngIf="i==0" >
+                    <ion-label style="text-align: left; font-weight: bold" >คอร์ส : {{c1_data.spc_course_name}}  </ion-label>
+                    <ion-label style="text-align: right; font-weight: bold" >กลุ่ม : {{c1_data.spc_group_name}} </ion-label>
+                </ion-item >
+                <ion-card-content *ngIf="i==0">  
+                    <div ng-bind-html="item"> <p> {{c1_data.spc_course_detail}}</p>  </div>                 
+                                      
+                  </ion-card-content>
+               
+              </ion-list>
+   </ion-card> 
+   <ion-card *ngFor= "let c2_data of course">
+      <ion-list>
+              <ion-item  >
+                  <ion-label style="text-align: left;font-size: 15px">{{c2_data.spc_prefix_nameTH}}{{c2_data.spc_student_tname}}    {{c2_data.spc_student_tsurname}} </ion-label>                                
+                </ion-item>    
+                <p style="text-align: right">ชั้น{{c2_data.spc_edu_level_name}} </p>             
+            </ion-list>
+ </ion-card> 
+</ion-content>
