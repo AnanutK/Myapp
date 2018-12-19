@@ -1,0 +1,2 @@
+# Myapp
+ionic project
