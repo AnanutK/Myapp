@@ -55,6 +55,7 @@ export class CheckInPage {
       alert.present()
     }else{
       let data ={
+        course_id:this.course_id,
         group_id:this.group_id
       }
       this.navCtrl.push(CheckInStdPage,data)

@@ -10,4 +10,6 @@ import { CheckInStdPage } from './check-in-std';
     IonicPageModule.forChild(CheckInStdPage),
   ],
 })
-export class CheckInStdPageModule {}
+export class CheckInStdPageModule {  
+       
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TserProvider } from '../../providers/tser/tser';
+import moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -9,15 +10,18 @@ import { TserProvider } from '../../providers/tser/tser';
 })
 export class GroupManagePage {
   student: std_data[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public TserProvider: TserProvider) {
+  promotion : any[];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public TserProvider: TserProvider)  {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupManagePage');
+    console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
+
   }
   ngOnInit(){
-    this.TserProvider.get_student().subscribe((response) => {
-      this.student = response;
+    this.TserProvider.get_promotion().subscribe((response) => {
+      this.promotion = response;
       console.log(response);
     });
 

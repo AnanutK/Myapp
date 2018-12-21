@@ -1,39 +1,27 @@
 <ion-header>
  <ion-navbar>
     <ion-title><p style="color:white;font-weight: normal;font-size: 20px">
-        โปรโมชัน
+        TCMs
   </p> </ion-title>
  </ion-navbar>
+ <ion-slides *ngIf="promotion && promotion.length" autoplay="400" loop="true" speed="3000" pager="true">
+    <ion-slide *ngFor ="let p_data of promotion">
+              <ion-list>
+                  <ion-item style="border: 1px"> 
+                        <ion-label style="text-align: center;font-size: 30px" >{{p_data.spc_promotion_name}}</ion-label>
+                  </ion-item>
+              </ion-list>                                                           
+    </ion-slide>
+  </ion-slides>
 </ion-header>
 <ion-content >
-    <ion-slides>
-        <ion-slide>
-            <ion-img width="80" height="80" src=""></ion-img>
-        </ion-slide>
-        <ion-slide>
-            <ion-card>
-                <ion-card-header>
-                  <ion-list>
-                      <ion-item style="border: 0px"> 
-                            <ion-label style="text-align: left;font-size: 17px" >เพิ่มนักเรียนลงกลุ่ม2</ion-label>
-                            <ion-label style="text-align: right"> <ion-icon name="person-add" > </ion-icon></ion-label>
-                      </ion-item>
-                  </ion-list>                                                           
-                 </ion-card-header>             
-              </ion-card>
-        </ion-slide>
-        <ion-slide>
-            <ion-card>
-                <ion-card-header>
-                  <ion-list>
-                      <ion-item style="border: 0px"> 
-                            <ion-label style="text-align: left;font-size: 17px" >เพิ่มนักเรียนลงกลุ่ม3</ion-label>
-                            <ion-label style="text-align: right"> <ion-icon name="person-add" > </ion-icon></ion-label>
-                      </ion-item>
-                  </ion-list>                                                           
-                 </ion-card-header>             
-              </ion-card>
-        </ion-slide>
-      </ion-slides>
+    <ion-card *ngFor= "let p2_data of promotion">
+        <ion-list>
+                <ion-item  >
+                    <ion-label style="text-align: left;font-size: 20px">{{p2_data.spc_promotion_name}} </ion-label>                                
+                  </ion-item>    
+                  <p > {{p2_data.spc_promotion_detail}} </p>             
+              </ion-list>
+   </ion-card>
 
 </ion-content>

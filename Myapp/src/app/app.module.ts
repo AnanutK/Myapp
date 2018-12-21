@@ -17,6 +17,7 @@ import { CheckInPage } from '../pages/check-in/check-in'
 import { CheckInStdPage } from '../pages/check-in-std/check-in-std'
 
 import { TserProvider } from '../providers/tser/tser';
+import { StudentAddPage } from '../pages/student-add/student-add';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TserProvider } from '../providers/tser/tser';
     CalendarPage,
     CalendarViewPage,
     CheckInPage,
-    CheckInStdPage
+    CheckInStdPage,
+    StudentAddPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { TserProvider } from '../providers/tser/tser';
     CalendarPage,
     CalendarViewPage,
     CheckInPage,
-    CheckInStdPage
+    CheckInStdPage,
+    StudentAddPage
   ],
   providers: [
     StatusBar,

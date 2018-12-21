@@ -18,7 +18,7 @@ export class StudentDetailPage {
 group_id:any
 num: std_number[]
 course: course_data[] 
- 
+course_detail: any[] 
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public TserProvider: TserProvider) {
   }
@@ -36,6 +36,10 @@ course: course_data[]
     this.TserProvider.get_stdDetail(this.group_id).subscribe((response) => {
       this.course = response;
       
+      console.log(response);
+    });
+    this.TserProvider.get_courseDetail(this.group_id).subscribe((response) => {
+      this.course_detail = response;     
       console.log(response);
     });
   }

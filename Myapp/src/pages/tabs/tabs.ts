@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { TserProvider } from '../../providers/tser/tser';
 import { StudentDetailPage } from '../student-detail/student-detail';
+import { StudentAddPage } from '../student-add/student-add';
 
 /**
  * Generated class for the TabsPage page.
@@ -20,6 +21,7 @@ export class TabsPage {
   group_id: any;
   course: course_data[];
   group: group_data[];
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public TserProvider: TserProvider,private alertController:AlertController) {
     
@@ -48,6 +50,22 @@ export class TabsPage {
       })
       alert.present()
     }
+  }
+  loadToadd(){
+    if (this.group_id == null) {
+      let  alert = this.alertController.create({
+        title:"กรุณาเลือกกลุ่ม",
+        buttons:[
+         { text:"ตกลง"} 
+        ]
+      })
+      alert.present()
+    } else {
+      let data ={
+        group_id:this.group_id
+      }
+      this.navCtrl.push(StudentAddPage,data)   
+    }             
   }
   load(){
     if (this.group_id == null) {

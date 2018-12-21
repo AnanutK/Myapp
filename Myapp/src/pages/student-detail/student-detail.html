@@ -17,7 +17,7 @@
 
 <ion-content padding>
     <ion-card>
-        <ion-list *ngFor= "let c1_data of course;let i = index">
+        <ion-list *ngFor= "let c1_data of course_detail;let i = index">
                 <ion-item *ngIf="i==0" >
                     <ion-label style="text-align: left; font-weight: bold" >คอร์ส : {{c1_data.spc_course_name}}  </ion-label>
                     <ion-label style="text-align: right; font-weight: bold" >กลุ่ม : {{c1_data.spc_group_name}} </ion-label>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import moment from 'moment';
 import { GroupManagePage } from '../group-manage/group-manage';
 import { TabsPage } from '../tabs/tabs';
 import { CalendarPage } from '../calendar/calendar';
